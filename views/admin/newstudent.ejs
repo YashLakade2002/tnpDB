@@ -1,0 +1,73 @@
+<%- include('../partials/header') -%>
+
+<div class="col-9">
+    <div class="container p-3 w-100">
+        <h1 class="mt-5 mb-4">Add Student Details</h1>
+    <%- include('../partials/messages') -%>
+    
+        <form class="mt-2" action="/student/new" method="POST">
+            <div class="row mt-5 justify-content-center d-flex">
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="name" placeholder="Student Name" 
+                    autocomplete="off" required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="age" placeholder="Student Age"
+                    autocomplete="off" required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="sapId" placeholder="SAP ID" 
+                    autocomplete="off" required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="rollNo" placeholder="Roll No" 
+                    autocomplete="off" required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="email" placeholder="Email Address"
+                    autocomplete="off" required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="contactno" placeholder="Student Contact No."  
+                    autocomplete="off"   required>
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="status" placeholder="Enter Status" 
+                    autocomplete="off"  required>
+                </div>
+
+                <div class="col-9 mt-4 text-primary">
+                    <h6> Fill below data, if student is placed...</h6>
+                </div>     
+                
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="companyName" placeholder="Enter Company Name"
+                         >
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="companyUrl" placeholder="Enter Company Url"
+                    autocomplete="off">
+                </div>
+
+                <div class="col-9 mt-4">
+                    <input type="text" class="form-control" name="package" placeholder="Enter package in LPA" 
+                    autocomplete="off" >
+                </div>                
+            </div>
+
+            <div class="justify-content-center d-flex mt-4">
+                <button id="publishBtn" class="btn btn-primary w-25 py-2">Save Data</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<%- include('../partials/footer') -%>

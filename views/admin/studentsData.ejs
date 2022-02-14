@@ -1,0 +1,56 @@
+<%- include('../partials/header') -%>
+
+<div class="col-9">
+    <div class="container p-3 w-100">
+        <h1 class="mt-5 mb-4">All Students</h1>
+        <%- include('../partials/messages') -%>
+        <div class="container">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>SAP ID</th>
+                        <th>Roll No</th>
+                        <th>Email</th>
+                        <th>Cont. No.</th>
+                        <th><a action="/student/<%= students.id %>" method="POST">Status</a></th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <% students.forEach((pro)=> { %>
+                        <tr>
+                            <td><%= pro.name %></td>
+                            <td><%= pro.age %></td>
+                            <td><%= pro.sapId %></td>
+                            <td><%= pro.rollNo %></td>
+                            <td><%= pro.email %></td>
+                            <td><%= pro.contactno %></td>
+                            <% if(pro.status == "Placed") { %>
+                                <td class="text-success"><%= pro.status%></td>
+                            <% }else{ %>
+                                <td class="text-danger"><%= pro.status%></td>
+                            <% } %>
+                            <td>
+                                <form style="display: inline;" action="/student/<%= pro.id %>" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button style="cursor: pointer;" type="submit" class="btn btn-primary p-2"><i class="fas fa-eye"></i></button>
+                                </form>
+                                
+                                <form style="display: inline;" action="/delete/student/<%= pro.id %>?_method=DELETE" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button style="cursor: pointer;" type="submit" class="btn btn-primary p-2"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include('../partials/footer') -%>

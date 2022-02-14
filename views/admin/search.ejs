@@ -1,0 +1,37 @@
+<%- include('../partials/header') -%>
+
+<div class="col-9">
+    <div class="container p-3 w-100">
+        <h1 class="mt-5 mb-4">Search Student</h1>
+        <%- include('../partials/messages') -%>
+        <form class="mt-2" id="newpostform" action="/student/search" method="GET">
+            <div class="row mt-5 justify-content-center d-flex">
+                <div class="col-6">
+                    <input type="text" class="form-control text-center" name="rollNo" autocomplete="off" placeholder="Enter Student's Roll Number" required>
+                </div>
+            </div>
+
+            <div class="justify-content-center d-flex mt-4">
+                <button id="fetchBtn" class="btn btn-primary w-25 py-2">Search Student</button>
+            </div>
+        </form>
+
+        <div class="ml-5 text-left mt-5">
+            <span class="text-primary">Name: </span> <span class="text-dark"><%= studentData.name%></span><br>
+            <span class="text-primary">Sap ID: </span> <span class="text-dark"><%= studentData.sapId%></span><br>
+            <span class="text-primary">Roll No: </span> <span class="text-dark"><%= studentData.rollNo%></span><br>
+            <span class="text-primary">Email Address: </span> <span class="text-dark"><%= studentData.email%></span><br>
+            <span class="text-primary">Contact No.: </span> <span class="text-dark"><%= studentData.contactno%></span><br>
+            <span class="text-primary">Status:</span> <span class="text-dark"><%= studentData.status%></span><br>
+            <% if( studentData.status == "Placed"){%>
+                <span class="text-primary">Company Name: </span> <span class="text-dark"><%= studentData.companyName%></span><br>
+                <span class="text-primary">Company Url: </span> <span class="text-dark"><%= studentData.companyUrl%></span><br>
+                <span class="text-primary">Package: </span> <span class="text-dark"><%= studentData.package%></span> LPA<br>
+            <%}%>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<%- include('../partials/footer') -%>

@@ -1,0 +1,41 @@
+<%- include('../partials/header') -%>
+
+    <div class="container p-3 w-100">
+        <h1 class="mt-5 mb-4"> <%= students.name%> </h1>
+        <%- include('../partials/messages') -%>
+        <div class="row">
+                <div class="col-3 ml-5 text-left mt-5">
+                    <span class="text-primary">Sap ID: </span><br> 
+                    <span class="text-primary">Roll No: </span><br> 
+                    <span class="text-primary">Email Address: </span><br> 
+                    <span class="text-primary">Contact No.: </span><br> 
+                    <span class="text-primary">Status:</span><br>
+                    <% if(students.status == "Placed"){%>
+                        <span class="text-primary">Company Name: </span><br> 
+                        <span class="text-primary">Company Url: </span><br>
+                        <span class="text-primary">Package: </span><br>
+                    <%}%>
+                </div>
+
+                <div class="col-3 text-left mt-5">
+                    <span class="text-dark"><%= students.sapId%></span><br>
+                    <span class="text-dark"><%= students.rollNo%></span><br>
+                    <span class="text-dark"><%= students.email%></span><br>
+                    <span class="text-dark"><%= students.contactno%></span><br>
+                    <span class="text-dark"><%= students.status%></span><br>
+                    <% if( students.status == "Placed"){%>
+                        <span class="text-dark"><%= students.companyName%></span><br>
+                        <span class="text-dark"><%= students.companyUrl%></span><br>
+                        <span class="text-dark"><%= students.package%></span> LPA<br>
+                    <%}%>
+                </div>
+            </div>
+            <div class="justify-content d-flex mt-5 ml-4">
+                <button id="fetchBtn" class="btn btn-primary w-15" >
+                    <a  class="text-light font-weight-bold" href="/students/studentsData">Back</a>
+                 </button>
+            </div>
+    </div>
+
+
+<%- include('../partials/footer') -%>
